@@ -17,6 +17,7 @@
     "publish:ci": "lerna version -m 'chore(release): publish [skip ci]' --exact --conventional-commits --yes && lerna exec --no-private --since HEAD~ -- npm publish --provenance"
   },
   "devDependencies": {
+    "@types/inquirer": "0.0.43",
     "chokidar-cli": "^2.0.0",
     "husky": "^4.2.0",
     "lerna": "^3.13.3",
