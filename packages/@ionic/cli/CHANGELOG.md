@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 8.0.0
+
+The first release published as `@herdwatch/ionic-cli`. Based on upstream
+`@ionic/cli` 7.2.1, with two changes of our own:
+
+### Bug Fixes
+
+* **cordova:** derive the iOS build output path from the Xcode configuration instead of
+  `platforms/ios/build/{emulator,device}`, which cordova-ios no longer writes to
+  (submitted upstream as [#5079](https://github.com/ionic-team/ionic-cli/pull/5079))
+* **deps:** add the missing `@types/inquirer`
+
+Note that the `8.0.0` tarball on npm was cut before this branch was synced with
+upstream 7.2.1, so it does not contain upstream's Standalone project-type change or
+superagent v9. The next publish from this branch must therefore be `8.0.1` or higher.
+
 ## [7.2.1](https://github.com/ionic-team/ionic-cli/compare/@ionic/cli@7.2.0...@ionic/cli@7.2.1) (2025-03-18)
 
 
