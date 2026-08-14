@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 7.2.2
+
+Versioning now follows upstream: this is upstream `@ionic/cli` 7.2.1 plus the changes this
+fork carries. The first release under the `@herdwatch` scope was numbered `8.0.0`, which
+tracked nothing; it appears *below* this entry because it is older, not newer.
+
+`8.0.0` cannot be withdrawn -- it was published on 2024-10-01, long past npm's 72-hour
+unpublish window -- so a higher version number holding older code stays on the registry
+permanently. Install without a version to get `latest`, and do not ask for `8`.
+
+Compared with the published `8.0.0`, this adds upstream 7.2.1, which `8.0.0` predates:
+
+### Bug Fixes
+
+* **angular:** default project type is now Standalone, from upstream
+  ([#5104](https://github.com/ionic-team/ionic-cli/issues/5104))
+
+### Dependencies
+
+* **superagent:** `^8.0.9` -> `^9.0.2`, from upstream
+
+It is also the first release published by CI rather than by hand, and so the first to
+carry a provenance attestation.
+
 # 8.0.0
 
 The first release published as `@herdwatch/ionic-cli`. Based on upstream
@@ -17,7 +41,7 @@ The first release published as `@herdwatch/ionic-cli`. Based on upstream
 
 Note that the `8.0.0` tarball on npm was cut before this branch was synced with
 upstream 7.2.1, so it does not contain upstream's Standalone project-type change or
-superagent v9. The next publish from this branch must therefore be `8.0.1` or higher.
+superagent v9. See `7.2.2` above for the release that does.
 
 ## [7.2.1](https://github.com/ionic-team/ionic-cli/compare/@ionic/cli@7.2.0...@ionic/cli@7.2.1) (2025-03-18)
 
