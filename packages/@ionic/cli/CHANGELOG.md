@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 8.0.1
+
+The first release published by CI rather than by hand, and so the first to carry a
+provenance attestation.
+
+Numbering continues from `8.x`: `8.0.0` is already published and cannot be withdrawn,
+having gone out on 2024-10-01, long past npm's 72-hour unpublish window.
+
+Contents beyond the published `8.0.0`, which was cut before this branch was synced with
+upstream 7.2.1:
+
+### Bug Fixes
+
+* **angular:** default project type is now Standalone, from upstream
+  ([#5104](https://github.com/ionic-team/ionic-cli/issues/5104))
+
+### Dependencies
+
+* **superagent:** `^8.0.9` -> `^9.0.2`, from upstream
+
 # 8.0.0
 
 The first release published as `@herdwatch/ionic-cli`. Based on upstream
