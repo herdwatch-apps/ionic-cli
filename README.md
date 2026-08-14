@@ -6,6 +6,22 @@
 
 The Ionic command line interface (CLI) is your go-to tool for developing [Ionic][ionic-homepage] apps.
 
+## Why this fork exists
+
+Forked from [ionic-team/ionic-cli](https://github.com/ionic-team/ionic-cli) because the CLI looks
+for Cordova's iOS build products in `platforms/ios/build/emulator` and
+`platforms/ios/build/device`, which cordova-ios no longer writes to. The fix is submitted upstream
+as [ionic-team/ionic-cli#5079](https://github.com/ionic-team/ionic-cli/pull/5079); it has been open
+since 2024-02-16, so treat this fork as permanent until that merges and ships.
+
+Published as [`@herdwatch/ionic-cli`](https://www.npmjs.com/package/@herdwatch/ionic-cli).
+
+Changes from upstream, all on the `stable` branch:
+
+- Derive the iOS build output path from the Xcode configuration
+  (`build/Debug-iphonesimulator`, `build/Release-iphoneos`) instead of the removed
+  `emulator`/`device` directories.
+
 ### Installation
 
 ```
