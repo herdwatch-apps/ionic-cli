@@ -1,33 +1,30 @@
 name: CI
 
+# Pull requests are checked whatever they target. The previous filter was
+# branches-ignore: [stable], which meant the release branch was the one branch
+# whose pull requests got no checks at all.
 on:
   push:
-    branches-ignore:
+    branches:
       - stable
+      - develop
   pull_request:
-    branches-ignore:
-      - stable
 
 jobs:
   build-and-test:
-    name: Build and Test (Node ${{ matrix.node }})
+    name: Build and Test
     runs-on: ubuntu-latest
     timeout-minutes: 30
-    strategy:
-      matrix:
-        node:
-          - 18.x
-          - 16.x
     steps:
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
-          node-version: ${{ matrix.node }}
-      - uses: actions/checkout@v3
-      - name: Restore Dependency Cache
-        uses: actions/cache@v3
-        with:
-          path: ~/.npm
-          key: ${{ runner.OS }}-dependency-cache-${{ hashFiles('**/package.json') }}
+          # The one version that matters: what CD publishes with, and what the
+          # projects installing this CLI globally actually run. The matrix used to
+          # be 16.x and 18.x -- both end-of-life, and neither in use anywhere.
+          node-version: 24
+          cache: npm
+          cache-dependency-path: '**/package.json'
       - run: npm install
       - run: npm run bootstrap
       - run: npm run lint
